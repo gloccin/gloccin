@@ -1,0 +1,20 @@
+(https://i.gyazo.com/2d9df7cfd5fd88612905317b5a94a263.mp4) -- A UI showcase made and scripted by me
+
+script 1:
+local frame = script.Parent.Parent.Profile
+local open = false
+
+script.Parent.MouseButton1Click:Connect(function()
+	if frame.Visible == false then
+		frame.Visible = true
+	else
+		frame.Visible = false
+	end
+end)
+=========================================================================================================
+script 2:
+script.Parent.MouseButton1Click:Connect(function()
+	script.Parent.Parent.Visible = false
+end)
+=========================================================================================================
+   These scripts enhold the features of the gyazo on the first line.
