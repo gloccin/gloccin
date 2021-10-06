@@ -1,0 +1,44 @@
+-- Roblox Script // gloccin --
+
+local DSService = game:GetService("DataStoreService")
+local DS = DSService:GetDataStore("DataStore1")
+
+game.Players:PlayerAdded:Connect(function(player)
+
+local leaderstats = Instance.new("Folder", player)
+leaderstats.Name = "leaderstats"
+
+local cash = Instance.new("IntValue", leaderstats)
+cash.Name = "Cash"
+cash.Value = 0
+
+
+
+local success, error = pcall(function()
+player:GetAsync(game.Players.LocalPlayer.leaderstats.Cash)
+	end)
+	
+if success then
+print("Successfully achieved".. player.Name.."'s data!")
+end
+
+if error then
+warn("An error occured while loading data. Error:".. error ..". Player name:".. player.Name)
+end
+
+end)
+
+game.Players.PlayerRemoving:Connect(function(player)
+local success, error = pcall(function()
+DS:SetAsync(game.Players.LocalPlayer.leaderstats.Cash, player.UserId)
+end)
+
+if success then
+print("Successfully saved data to".. player.Name)
+end
+
+if error then
+warn("An error occured while the player was leaving. Error:".. error ..". Player name:".. player.Name)
+end
+
+end)
