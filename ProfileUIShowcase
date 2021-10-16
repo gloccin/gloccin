@@ -1,6 +1,6 @@
 (https://i.gyazo.com/2d9df7cfd5fd88612905317b5a94a263.mp4) -- A UI showcase made and scripted by me
 
-script 1:
+script 1: (Explaination: This script gives a pop-up profile in UI, when you use left mouse button (MouseButton1Click), then it will appear on the screen.)
 local frame = script.Parent.Parent.Profile
 local open = false
 
@@ -12,7 +12,7 @@ script.Parent.MouseButton1Click:Connect(function()
 	end
 end)
 =========================================================================================================
-script 2:
+script 2: (Explaination: This script is a function producing a action when you click the "Profile" button in gyazo above. This is for the exit button so you can leave the frame.)
 script.Parent.MouseButton1Click:Connect(function()
 	script.Parent.Parent.Visible = false
 end)
